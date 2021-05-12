@@ -1,1 +1,7 @@
-/node_modules
+/dist-chrome/
+/dist-chrome-package/
+/dist-firefox/
+/dist-firefox-package/
+/dist-src/
+/extension/
+/node_modules/
