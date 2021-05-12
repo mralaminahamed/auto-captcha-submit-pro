@@ -1,0 +1,14 @@
+{
+  "extension_description": {
+    "message": "This software for automatically submitting captcha code by eliminating mistakes for specific [*money.*] websites.",
+    "description": "Description of the what the extension does."
+  },
+  "command_toggle_description": {
+    "message": "Toggle ACS Pro on/off",
+    "description": "Tooltip for toolbar button to turn ACS Pro on or off"
+  },
+  "command_toggle_enabled": {
+    "message": "ACS Pro: Click to open new earning website",
+    "description": "Tooltip for toolbar button when enable."
+  }
+}
