@@ -1,5 +1,5 @@
 {
-  "name": "acs-pro",
+  "name": "auto-captcha-submit-pro",
   "version": "7.3.0",
   "description": "This software for automatically submitting captcha code by eliminating mistakes for specific [*money.*] websites.",
   "main": "app.ts",
