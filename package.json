@@ -29,7 +29,6 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.0.1",
     "css-loader": "^3.5.3",
-    "desktop-screenshot": "^0.1.1",
     "eslint": "^7.4.0",
     "file-loader": "^6.0.0",
     "javascript-obfuscator": "^0.28.4",
