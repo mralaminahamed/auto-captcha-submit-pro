@@ -17,6 +17,8 @@
     "zip-src": "node ./src/utils/zip-src"
   },
   "keywords": [
+    "captcha-solver",
+    "auto-captcha",
     "AutoCaptchaSubmit",
     "AutoCaptchaSubmitPro",
     "CaptchaSubmit",
