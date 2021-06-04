@@ -51,8 +51,7 @@ const commonExtConfig = {
     ...commonConfig,
     entry: {
         'content': ['./assets/ts/app.ts','./manifest.json.src'],
-        'background': './assets/ts/background.ts',
-        'lib': './assets/ts/additional.ts',
+        'background': './assets/ts/background.ts'
     }
 };
 
