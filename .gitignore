@@ -1,3 +1,9 @@
+##cache
+.idea
+*-locak.json
+*.lock
+
+## dist
 /dist-chrome/
 /dist-chrome-package/
 /dist-firefox/
@@ -5,3 +11,4 @@
 /dist-src/
 /extension/
 /node_modules/
+/tests
