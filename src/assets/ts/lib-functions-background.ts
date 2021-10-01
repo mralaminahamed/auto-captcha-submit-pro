@@ -1,6 +1,6 @@
 import {IsJsonString} from "./lib-functions-common";
 
-export function sendRequest(options: any, callback?: any) {
+export function sendRequest(options: any, callback?: any, fallback?: any) {
     let dataType: any;
     /*#!if debug===true*/
     /*console.group('XHR request');
