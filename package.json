@@ -7,10 +7,10 @@
     "build": "webpack",
     "build:chrome": "webpack --env.target=chrome",
     "lint": "web-ext lint",
-    "package": "npm run update-version && npm run build && web-ext build --overwrite-dest -a dist-firefox-package",
-    "package:chrome": "npm run update-version && npm run build:chrome && web-ext build --overwrite-dest -s dist-chrome -a dist-chrome-package",
-    "extension": "npm run build && web-ext run --source-dir=tests --firefox-profile=/home/alamin/.mozilla/firefox/5gp4dglp.default-release --reload",
-    "extension-dev": "npm run build && web-ext run --source-dir=tests --firefox-profile=/home/alamin/.mozilla/firefox/kw3akca7.dev-edition-default --reload",
+    "package": "yarn update-version && yarn build && web-ext build --overwrite-dest -a dist-firefox-package",
+    "package:chrome": "yarn update-version && yarn build:chrome && web-ext build --overwrite-dest -s dist-chrome -a dist-chrome-package",
+    "extension": "yarn build && web-ext run --source-dir=tests --firefox-profile=/home/alamin/.mozilla/firefox/5gp4dglp.default-release --reload",
+    "extension-dev": "yarn build && web-ext run --source-dir=tests --firefox-profile=/home/alamin/.mozilla/firefox/kw3akca7.dev-edition-default --reload",
     "watch": "webpack -w",
     "watch:chrome": "webpack -w --env.target=chrome",
     "update-version": "node ./src/utils/sync-app-version",
@@ -28,6 +28,7 @@
   "author": "Al Amin Ahamed",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
+    "@types/semver": "^7.3.9",
     "@types/webextension-polyfill": "^0.8.2",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.4",
@@ -55,5 +56,6 @@
   "dependencies": {
     "archiver": "^5.3.0",
     "web-ext": "^6.7.0"
-  }
+  },
+  "type": "module"
 }

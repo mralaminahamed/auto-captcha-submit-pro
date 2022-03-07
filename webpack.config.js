@@ -1,8 +1,15 @@
-const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WebExtWebpackPlugin = require('web-ext-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const JavaScriptObfuscator = require('webpack-obfuscator');
+// External node dependencies
+import path from "path";
+import {fileURLToPath} from "url";
+
+// External third party dependencies
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import WebExtWebpackPlugin from "web-ext-webpack-plugin";
+import {CleanWebpackPlugin} from "clean-webpack-plugin";
+
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename);
 
 
 // Look for a --firefox <path> argument
@@ -109,9 +116,6 @@ const firefoxConfig = {
             firefox,
             firefoxProfile,
         }),
-        new JavaScriptObfuscator({
-            rotateStringArray: true
-        })
     ],
 };
 
@@ -162,12 +166,6 @@ const chromeConfig = {
         path: path.resolve(__dirname, 'dist-chrome'),
         filename: 'assets/js/[name].js',
     },
-    plugins: [
-        ...commonExtConfig.plugins,
-        new JavaScriptObfuscator({
-            rotateStringArray: true
-        })
-    ],
 };
 
 const testConfig = {
@@ -222,7 +220,7 @@ const testConfig = {
     },
 }
 
-module.exports = (env, argv) => {
+export default (env, argv) => {
     let configs = [testConfig]
     if (env && env.target === 'chrome') {
         configs.push({...chromeConfig, name: 'extension'})
@@ -231,4 +229,4 @@ module.exports = (env, argv) => {
     }
 
     return configs;
-};
+}

@@ -1,8 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const {parseSemVer} = require('semver-parser');
+import {parseSemVer} from "semver-parser";
+import path from "path";
+import fs from "fs";
+import {fileURLToPath} from "url"
 
 function main() {
+
+    const __filename = fileURLToPath(import.meta.url)
+    const __dirname = path.dirname(__filename);
+
     console.log('Reading version number in package...');
 
     // Read version
