@@ -9,7 +9,7 @@
 'use strict';
 
 import {app, coll} from "./db";
-import {browser} from "webextension-polyfill-ts";
+import browser from "webextension-polyfill";
 import {
     acsComPortFront, webMessageReceiver
 } from "./messanger";
