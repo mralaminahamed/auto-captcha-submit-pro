@@ -1,7 +1,11 @@
-const archiver = require('archiver');
-const path = require('path');
-const fs = require('fs');
+import fs from "fs";
+import path from "path";
+import archiver from "archiver";
+import {fileURLToPath} from "url";
 
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename);
 const DEST_DIR = path.join(__dirname, '../..', 'dist-src');
 
 async function main() {
@@ -55,7 +59,6 @@ async function main() {
 
   const files = [
     'package.json',
-    'package-lock.json',
     'webpack.config.js',
     'tsconfig.json',
   ];
