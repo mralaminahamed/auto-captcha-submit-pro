@@ -1,6 +1,6 @@
 import {captureElementByClassName, captureElementById, checkDuplicate, createElement} from "./lib-functions-common";
 import {app, coll} from "./db";
-import {browser} from "webextension-polyfill-ts";
+import {storage} from "webextension-polyfill";
 import {currencyFormat, reFormatScriptTag} from "./lib-functions";
 import {acsComPortFront} from "./messanger";
 import {bottomNotification, pushExecuteScript} from "./lib-assets";
@@ -1483,7 +1483,7 @@ export async function globalEventControllers(component: string) {
         /*console.log('set event for setting-get-a-licence action');
         console.log(captureElementById('setting-get-a-licence'));*/
         captureElementById('setting-get-a-licence').addEventListener('click', function () {
-            browser.storage.local.set({"appsetting": "running"});
+            storage.local.set({"appsetting": "running"});
             addPriceListWindow();
             /*console.log('request to open licence window!!');*/
         });

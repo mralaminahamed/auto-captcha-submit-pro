@@ -6,8 +6,8 @@
  * */
 
 'use strict';
-import {browser} from "webextension-polyfill-ts";
-import {BrowserJS} from "./browserjs";
+import browser from "webextension-polyfill";
+import {BrowserJS}        from "./browserjs";
 import {app, today} from "./db";
 import {optimizeAppSettingObject, sendRequest} from "./lib-functions-background";
 import {appPaymentURL, globalAppMonitorURL} from "./lib-main";
@@ -267,7 +267,7 @@ function backgroundResponder(request: { constructor?: any; command?: any; data?:
             }
             if (request.command === 'sendUserData') {
                 if (acsComPortBack !== undefined) {
-                    browser.storage.local.get().then(function (appsetting) {
+                    browser.storage.local.get().then(function (appsetting: any) {
                             if (Object.keys(appsetting).length !== 0 && appsetting.constructor === Object) {
                                 if (appsetting.app !== '' || appsetting.app.id !== '' || appsetting.app.name !== '' ||
                                     appsetting.browser !== '' || appsetting.browser.name !== '' || appsetting.browser.version !== '' ||
@@ -287,7 +287,7 @@ function backgroundResponder(request: { constructor?: any; command?: any; data?:
             }
             if (request.command === 'sendClientIpData') {
                 if (acsComPortBack !== undefined) {
-                    browser.storage.local.get('client').then(function (clientsetting) {
+                    browser.storage.local.get('client').then(function (clientsetting:any) {
                             if (Object.keys(clientsetting).length !== 0 && clientsetting.constructor === Object) {
                                 if (clientsetting.client !== '' || clientsetting.client.ip !== '' || clientsetting.client.city !== '' || clientsetting.client.country !== '') {
                                     return acsComPortBack.postMessage({'clientIpData': clientsetting.client});
@@ -312,7 +312,7 @@ function backgroundResponder(request: { constructor?: any; command?: any; data?:
             if (request.command === 'decrease') {
                 if (acsComPortBack !== undefined) {
                     browser.storage.local.get().then(
-                        function (setting) {
+                        function (setting: {app: {id:number}, client: {ip:string}, licence: {limit:number, type:string, nextUpdate: string, expire: string, update: string, limitBase:number, earn:number, issue:number, key:number}}) {
                             if (Object.keys(setting).length !== 0 && setting.constructor === Object) {
                                 if (setting.licence.limit === 0) {
                                     if (setting.licence.type === 'trial') {
@@ -334,8 +334,8 @@ function backgroundResponder(request: { constructor?: any; command?: any; data?:
                                             "earndata": {
                                                 _default_: {
                                                     "tracker": appTracker,
-                                                    "app_id": setting.app.id,
-                                                    "ip": setting.client.ip,
+                                                    "app_id": setting.app?.id,
+                                                    "ip": setting.client?.ip,
                                                     "os_name_arch": BrJS.PlatformName + ' ' + BrJS.PlatformArchitecture,
                                                     "browser": BrJS.BrowserNameFull
                                                 },
@@ -380,7 +380,7 @@ function backgroundResponder(request: { constructor?: any; command?: any; data?:
             if (request.command === 'setLicence') {
                 if (acsComPortBack !== undefined) {
                     browser.storage.local.get('licence').then(
-                        function (licenceSetting) {
+                        function (licenceSetting: {licence : {limit:number, type:string, nextUpdate: string, expire: string, update: string, limitBase:number, earn:number, issue:number, key:number}}) {
                             if (Object.keys(licenceSetting).length !== 0 && licenceSetting.constructor === Object) {
                                 browser.storage.local.set({
                                     "licence": {
