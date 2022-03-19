@@ -47,7 +47,7 @@ const commonConfig = {
         new CopyWebpackPlugin({
             patterns: [
                 {from: './_locales/', to: './_locales/'},
-                {from: './assets/sass/app.css*', to: './assets/css/[name].[ext]'},
+                {from: './assets/sass/app.css*', to: './assets/css/[name][ext]'},
                 {from: './assets/images/', to: './assets/images/[name][ext]'},
             ]
         }),

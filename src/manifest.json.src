@@ -62,7 +62,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["assets/js/lib.js","assets/js/content.js"],
+      "js": ["assets/js/content.js"],
       "css": ["assets/css/app.css"],
       "all_frames": true
     }
