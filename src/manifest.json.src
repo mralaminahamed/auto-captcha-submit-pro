@@ -8,7 +8,7 @@
     "url": "https://www.facebook.com/mrabir.ahamed/"
   },
   "homepage_url": "https://download.mishusoft.com/addons/autocapsubmitpro/",
-  "version": "7.3.0",
+  "version": "7.4.1",
   "default_locale": "en",
   /*#!if browser_specific_settings===true*/
   "browser_specific_settings": {
