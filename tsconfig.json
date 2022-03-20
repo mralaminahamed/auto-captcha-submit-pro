@@ -1,20 +1,18 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "outDir": "extension",
-    "pretty": true,
-    "sourceMap": true,
-    "strictNullChecks": true,
     "target": "ESNext",
-    "typeRoots": ["node_modules/@types","node_modules/web-ext-types"/*,"src/common.d.ts"*/]
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "Node",
+    "strict": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true
   },
-  "include": [
-    "./src/assets/ts/*"
-  ]
+  "include": ["src"]
 }

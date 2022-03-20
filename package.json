@@ -1,61 +1,60 @@
 {
   "name": "auto-captcha-submit-pro",
-  "version": "7.4.1",
-  "description": "This software for automatically submitting captcha code by eliminating mistakes for specific [*money.*] websites.",
-  "main": "src/assets/ts/app.ts",
-  "scripts": {
-    "build": "webpack",
-    "build:chrome": "webpack --env.target=chrome",
-    "lint": "web-ext lint",
-    "package": "yarn update-version && yarn build && web-ext build --overwrite-dest -a dist-firefox-package",
-    "package:chrome": "yarn update-version && yarn build:chrome && web-ext build --overwrite-dest -s dist-chrome -a dist-chrome-package",
-    "extension": "yarn build && web-ext run --source-dir=tests --firefox-profile=/home/alamin/.mozilla/firefox/5gp4dglp.default-release --reload",
-    "extension-dev": "yarn build && web-ext run --source-dir=tests --firefox-profile=/home/alamin/.mozilla/firefox/kw3akca7.dev-edition-default --reload",
-    "watch": "webpack -w",
-    "watch:chrome": "webpack -w --env.target=chrome",
-    "update-version": "node ./src/utils/sync-app-version",
-    "zip-src": "node ./src/utils/zip-src"
+  "version": "8.0.0",
+  "description": "Paid captcha resolver",
+  "homepage": "https://github.com/mralaminahamed/auto-captcha-submit-pro/",
+  "bugs": {
+    "url": "https://github.com/mralaminahamed/auto-captcha-submit-pro/issues",
+    "email": "alamin@mishusoft.com"
+  },
+  "author": {
+    "name": "Al Amin Ahamed",
+    "email": "alamin@mishusoft.com",
+    "url": "https://github.com/mralaminahamed/"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/al-amin-ahamed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mralaminahamed/clear-browsing-data-advanced.git"
   },
   "keywords": [
-    "captcha-solver",
-    "auto-captcha",
-    "AutoCaptchaSubmit",
-    "AutoCaptchaSubmitPro",
-    "CaptchaSubmit",
-    "MoneyEarning",
-    "TrustedMoneyEaring"
+    "captcha",
+    "auto captcha",
+    "captcha solver",
+    "paid captcha  solver"
   ],
-  "author": "Al Amin Ahamed",
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:watch": "tsc && vite build --watch",
+    "build:watch:firefox": "cross-env TARGET_BROWSER=firefox vite build --watch",
+    "build:firefox": "cross-env TARGET_BROWSER=firefox vite build",
+    "preview": "vite preview",
+    "lint:firefox": "yarn build:firefox && web-ext lint",
+    "package:firefox": "yarn build:firefox && web-ext build",
+    "run:firefix": "yarn build:firefox && web-ext run",
+    "run:firefix:adnroid": "yarn build:firefox && web-ext run --target=firefox-android",
+    "run:firefix:no-reload": "yarn build:firefox && web-ext run --no-reload",
+    "extension:build": "web-ext build"
+  },
   "devDependencies": {
-    "@types/semver": "^7.3.9",
+    "@types/node": "^17.0.21",
     "@types/webextension-polyfill": "^0.8.2",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^10.2.4",
-    "css-loader": "^6.7.0",
-    "file-loader": "^6.2.0",
-    "javascript-obfuscator": "^4.0.0",
-    "sass": "^1.49.9",
-    "sass-loader": "^12.6.0",
-    "semver-parser": "^4.0.0",
-    "style-loader": "^3.3.1",
-    "ts-loader": "^9.2.7",
+    "cross-env": "^7.0.3",
+    "rollup-plugin-copy": "^3.4.0",
     "typescript": "^4.6.2",
-    "web-ext-types": "^3.2.1",
-    "web-ext-webpack-plugin": "github:hiikezoe/web-ext-webpack-plugin",
-    "webextension-polyfill": "^0.8.0",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2",
-    "webpack-obfuscator": "^3.5.1",
-    "webpack-preprocessor": "^0.1.12",
-    "webpack-preprocessor-loader": "^1.1.4"
+    "vite": "^2.8.6",
+    "vite-plugin-web-extension": "^1.1.3",
+    "webextension-polyfill": "^0.8.0"
   },
   "webExt": {
-    "sourceDir": "dist-firefox"
+    "sourceDir": "dist"
   },
   "dependencies": {
-    "archiver": "^5.3.0",
-    "web-ext": "^6.7.0"
-  },
-  "type": "module"
+    "archiver": "^5.3.0"
+  }
 }
