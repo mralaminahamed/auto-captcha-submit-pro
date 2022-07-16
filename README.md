@@ -1,15 +1,15 @@
 <p align="center"><img width="128" height="128" src="https://i.imgur.com/913EKe3.png"></p>
-<h1 align="center">Clear Browsing Data (Advanced)</h1>
+<h1 align="center"> Auto Captcha Resolver (Pro)</h1>
 
 <p align="center">
   </br></br>
   <a href="https://chrome.google.com/webstore/detail/bjilljlpencdcpihofiobpnfgcakfdbe">
     <img height="58" src="https://i.imgur.com/K9Yh8G9.png" alt="Chrome Web Store"></a>
-  <a href="https://addons.mozilla.org/en-US/firefox/addon/clear-browsing-data/">
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/auto-captcha-submit-pro/">
     <img height="58" src="https://i.imgur.com/2jJOtTI.png" alt="Firefox add-ons"></a>
   <a href="https://microsoftedge.microsoft.com/addons/detail/milebhdgmnpkhodhblfmgeeadncpnimi">
     <img height="58" src="https://i.imgur.com/es2YFRA.png" alt="Microsoft Store"></a>
-  <a href="https://addons.opera.com/en/extensions/details/clear-browsing-data/">
+  <a href="https://addons.opera.com/en/extensions/details/auto-captcha-submit-pro/">
     <img height="58" src="https://i.imgur.com/IYYsrwg.png" alt="Opera add-ons"></a>
   </br></br>
 </p>
@@ -19,9 +19,9 @@
 The continued development of Clear Browsing Data is made possible
 thanks to the support of awesome backers. If you'd like to join them,
 please consider contributing with
-[Patreon](https://armin.dev/go/patreon?pr=clear-browsing-data&src=repo),
-[PayPal](https://armin.dev/go/paypal?pr=clear-browsing-data&src=repo) or
-[Bitcoin](https://armin.dev/go/bitcoin?pr=clear-browsing-data&src=repo).
+[Patreon](https://armin.dev/go/patreon?pr=auto-captcha-submit-pro&src=repo),
+[PayPal](https://armin.dev/go/paypal?pr=auto-captcha-submit-pro&src=repo) or
+[Bitcoin](https://armin.dev/go/bitcoin?pr=auto-captcha-submit-pro&src=repo).
 
 ## Description
 

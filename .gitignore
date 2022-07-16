@@ -12,6 +12,5 @@
 /extension/
 /node_modules/
 /tests
-.yarn/releases/yarn-4.0.0-rc.6.cjs
+.yarn/
 .yarnrc.yml
-.yarn/install-state.gz
